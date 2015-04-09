@@ -1,5 +1,6 @@
 import unittest
 from set1 import challenge_1
+from set1 import challenge_2
 
 class TestSet1(unittest.TestCase):
 
@@ -14,6 +15,18 @@ class TestSet1(unittest.TestCase):
         ])
 
         output_string = challenge_1.main(input_string)
+
+        self.assertEqual(output_string, expected_output_string)
+
+    def test_challenge_2(self):
+        input_strings = [
+            "1c0111001f010100061a024b53535009181c",
+            "686974207468652062756c6c277320657965"
+        ]
+
+        expected_output_string = "746865206b696420646f6e277420706c6179"
+
+        output_string = challenge_2.main(*input_strings)
 
         self.assertEqual(output_string, expected_output_string)
 
