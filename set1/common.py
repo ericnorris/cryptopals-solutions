@@ -45,7 +45,7 @@ def recover_xor_key(cipher_text):
 
     key = min(scores, key = scores.get)
 
-    return (key, xor_text_map[key])
+    return (key, scores[key], xor_text_map[key])
 
 def single_byte_xor(string, character):
     return ''.join([chr(ord(a) ^ ord(character)) for a in string])
