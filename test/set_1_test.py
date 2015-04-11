@@ -4,16 +4,15 @@ from set1 import challenge_1
 from set1 import challenge_2
 from set1 import challenge_3
 from set1 import challenge_4
+from set1 import challenge_5
 
 directory = path.dirname(path.realpath(__file__))
 
 class TestSet1(unittest.TestCase):
 
     def test_challenge_1(self):
-        input_string = (
-            "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f6"
-            "9736f6e6f7573206d757368726f6f6d"
-        )
+        input_string = "49276d206b696c6c696e6720796f757220627261696e206c696b" \
+                       "65206120706f69736f6e6f7573206d757368726f6f6d"
 
         expected_output_string = (
             "SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t"
@@ -36,10 +35,8 @@ class TestSet1(unittest.TestCase):
         self.assertEqual(output_string, expected_output_string)
 
     def test_challenge_3(self):
-        input_string = (
-            "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3"
-            "736"
-        )
+        input_string = "1b37373331363f78151b7f2b783431333d78397828372d363c78" \
+                       "373e783a393b3736"
 
         expected_output_string = "Cooking MC's like a pound of bacon"
 
@@ -53,6 +50,21 @@ class TestSet1(unittest.TestCase):
         expected_output_string = "Now that the party is jumping\n"
 
         output_string = challenge_4.main(input_file)
+
+        self.assertEqual(output_string, expected_output_string)
+
+    def test_challenge_5(self):
+        text = "Burning 'em, if you ain't quick and nimble\n" \
+               "I go crazy when I hear a cymbal"
+
+        key = "ICE"
+
+        expected_output_string = "0b3637272a2b2e63622c2e69692a23693a2a3c6324" \
+                                 "202d623d63343c2a26226324272765272a282b2f20" \
+                                 "430a652e2c652a3124333a653e2b2027630c692b20" \
+                                 "283165286326302e27282f"
+
+        output_string = challenge_5.main(text, key)
 
         self.assertEqual(output_string, expected_output_string)
 

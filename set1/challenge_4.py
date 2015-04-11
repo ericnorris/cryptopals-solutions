@@ -12,8 +12,3 @@ def main(data):
     best_score = min(line_scores)
 
     return line_scores[best_score]
-
-if __name__ == '__main__':
-    data_file = open("challenge-4-data.txt")
-
-    main(data_file)
