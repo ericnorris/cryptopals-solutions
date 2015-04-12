@@ -5,6 +5,7 @@ from set1 import challenge_2
 from set1 import challenge_3
 from set1 import challenge_4
 from set1 import challenge_5
+from set1 import challenge_6
 
 directory = path.dirname(path.realpath(__file__))
 
@@ -65,6 +66,16 @@ class TestSet1(unittest.TestCase):
                                  "283165286326302e27282f"
 
         output_string = challenge_5.main(text, key)
+
+        self.assertEqual(output_string, expected_output_string)
+
+    def test_challenge_6(self):
+        input_file = open(directory + "/data/challenge-6-data.txt").read()
+        ciphertext = input_file.decode("base64")
+
+        expected_output_string = "Terminator X: Bring the noise"
+
+        output_string = challenge_6.main(ciphertext)
 
         self.assertEqual(output_string, expected_output_string)
 
