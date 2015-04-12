@@ -1,12 +1,6 @@
 import unittest
 from os import path, chdir
-from set1 import challenge_1
-from set1 import challenge_2
-from set1 import challenge_3
-from set1 import challenge_4
-from set1 import challenge_5
-from set1 import challenge_6
-from set1 import challenge_7
+from set1 import *
 
 chdir(path.dirname(path.realpath(__file__)))
 
@@ -86,11 +80,20 @@ class TestSet1(unittest.TestCase):
         ciphertext = input_file.decode("base64")
         key = b'YELLOW SUBMARINE'
 
-        expected_output = open("output/challenge-7-output.txt").read()
+        expected_output_string = open("output/challenge-7-output.txt").read()
 
         output_string = challenge_7.main(ciphertext, key)
 
-        self.assertEqual(output_string, expected_output)
+        self.assertEqual(output_string, expected_output_string)
+
+    def test_challenge_8(self):
+        input_file = open("data/challenge-8-data.txt")
+
+        expected_output = 1
+
+        output = challenge_8.main(input_file)
+
+        self.assertEqual(output, expected_output)
 
 if __name__ == '__main__':
     unittest.main()
