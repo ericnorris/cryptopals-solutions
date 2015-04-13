@@ -2,7 +2,7 @@ import unittest
 from os import path, chdir
 from set1 import *
 
-chdir(path.dirname(path.realpath(__file__)))
+test_directory = path.dirname(path.realpath(__file__))
 
 class TestSet1(unittest.TestCase):
 
@@ -41,7 +41,7 @@ class TestSet1(unittest.TestCase):
         self.assertEqual(output_string, expected_output_string)
 
     def test_challenge_4(self):
-        input_file = open("data/challenge-4-data.txt")
+        input_file = open(test_directory + "/data/challenge-4-data.txt")
 
         expected_output_string = "Now that the party is jumping\n"
 
@@ -65,7 +65,7 @@ class TestSet1(unittest.TestCase):
         self.assertEqual(output_string, expected_output_string)
 
     def test_challenge_6(self):
-        input_file = open("data/challenge-6-data.txt").read()
+        input_file = open(test_directory + "/data/challenge-6-data.txt").read()
         ciphertext = input_file.decode("base64")
 
         expected_output_string = "Terminator X: Bring the noise"
@@ -75,19 +75,20 @@ class TestSet1(unittest.TestCase):
         self.assertEqual(output_string, expected_output_string)
 
     def test_challenge_7(self):
-        input_file = open("data/challenge-7-data.txt").read()
+        input_file = open(test_directory + "/data/challenge-7-data.txt").read()
 
         ciphertext = input_file.decode("base64")
         key = b'YELLOW SUBMARINE'
 
-        expected_output_string = open("output/challenge-7-output.txt").read()
+        output_file = test_directory + "/output/challenge-7-output.txt"
+        expected_output_string = open(output_file).read()
 
         output_string = challenge_7.main(ciphertext, key)
 
         self.assertEqual(output_string, expected_output_string)
 
     def test_challenge_8(self):
-        input_file = open("data/challenge-8-data.txt")
+        input_file = open(test_directory + "/data/challenge-8-data.txt")
 
         expected_output = 1
 
