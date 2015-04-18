@@ -31,3 +31,11 @@ class TestSet2(unittest.TestCase):
 
         self.assertEqual(decrypted, expected_output_string)
         self.assertEqual(encrypted, ciphertext)
+
+    def test_challenge_11(self):
+        # Test five times
+        self.assertTrue(challenge_11.main())
+        self.assertTrue(challenge_11.main())
+        self.assertTrue(challenge_11.main())
+        self.assertTrue(challenge_11.main())
+        self.assertTrue(challenge_11.main())

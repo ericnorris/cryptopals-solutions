@@ -1,5 +1,3 @@
-import base64
-
 def detect_ecb(ciphertext):
     """Detect if the given ciphertext was encoded with mode ECB."""
 
