@@ -49,3 +49,9 @@ class TestSet2(unittest.TestCase):
         output = challenge_12.main(plaintext)
 
         self.assertEqual(plaintext, output)
+
+    def test_challenge_13(self):
+        admin_profile = challenge_13.main()
+
+        self.assertIn('role', admin_profile)
+        self.assertEqual(admin_profile['role'], 'admin')
