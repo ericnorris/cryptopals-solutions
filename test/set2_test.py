@@ -39,3 +39,13 @@ class TestSet2(unittest.TestCase):
         self.assertTrue(challenge_11.main())
         self.assertTrue(challenge_11.main())
         self.assertTrue(challenge_11.main())
+
+    def test_challenge_12(self):
+        input_file = open(test_directory +
+                          "/data/challenge-12-data.txt").read()
+
+        plaintext = input_file.decode('base64')
+
+        output = challenge_12.main(plaintext)
+
+        self.assertEqual(plaintext, output)
