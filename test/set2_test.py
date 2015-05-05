@@ -55,3 +55,13 @@ class TestSet2(unittest.TestCase):
 
         self.assertIn('role', admin_profile)
         self.assertEqual(admin_profile['role'], 'admin')
+
+    def test_challenge_14(self):
+        input_file = open(test_directory +
+                          "/data/challenge-14-data.txt").read()
+
+        plaintext = input_file.decode('base64')
+
+        output = challenge_14.main(plaintext)
+
+        self.assertEqual(plaintext, output)

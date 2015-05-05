@@ -97,7 +97,7 @@ def decrypt_ecb_suffix(encryption_function):
             # Break after reaching PKCS #7 padding.
             if is_last_block and ord(block_solution[-1]) == 1:
                 block_solution = block_solution[:-1]
-                break;
+                break
 
         last_known_block = block_solution
         solution += block_solution
