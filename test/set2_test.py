@@ -65,3 +65,20 @@ class TestSet2(unittest.TestCase):
         output = challenge_14.main(plaintext)
 
         self.assertEqual(plaintext, output)
+
+    def test_challenge_15(self):
+        good_input = "ICE ICE BABY\x04\x04\x04\x04"
+
+        expected_output_string = "ICE ICE BABY"
+
+        output_string = challenge_15.main(good_input)
+
+        self.assertEqual(output_string, expected_output_string)
+
+        bad_input1 = "ICE ICE BABY\x05\x05\x05\x05"
+
+        self.assertRaises(Exception, challenge_15.main, bad_input1)
+
+        bad_input2 = "ICE ICE BABY\x01\x02\x03\x04"
+
+        self.assertRaises(Exception, challenge_15.main, bad_input2)
