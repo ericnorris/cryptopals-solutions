@@ -82,3 +82,6 @@ class TestSet2(unittest.TestCase):
         bad_input2 = "ICE ICE BABY\x01\x02\x03\x04"
 
         self.assertRaises(Exception, challenge_15.main, bad_input2)
+
+    def test_challenge_16(self):
+        self.assertTrue(challenge_16.main())

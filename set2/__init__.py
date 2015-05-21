@@ -5,5 +5,6 @@ __all__ = [
     "challenge_12",
     "challenge_13",
     "challenge_14",
-    "challenge_15"
+    "challenge_15",
+    "challenge_16"
 ]
