@@ -1,5 +1,5 @@
 from Crypto.Cipher import AES
-from challenge_9 import pkcs7_pad
+from cryptopals.set2.challenge_9 import pkcs7_pad
 
 # This challenge requires the use of the PyCrypto module
 # https://github.com/dlitz/pycrypto

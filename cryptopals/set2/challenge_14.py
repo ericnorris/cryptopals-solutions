@@ -1,7 +1,7 @@
 import random
 from itertools import chain, izip
-from challenge_11 import pseudorandom_aes_key
-from challenge_11 import encrypt_aes_ecb
+from cryptopals.set2.challenge_11 import pseudorandom_aes_key
+from cryptopals.set2.challenge_11 import encrypt_aes_ecb
 
 def aes_ecb_unknown_key_random_prefix_encrypt(secret_plaintext):
     """Return a function for encrypting input with a hidden key and string."""

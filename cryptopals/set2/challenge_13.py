@@ -1,10 +1,10 @@
 from urlparse import parse_qsl
 from re import sub
-from challenge_9 import pkcs7_pad
-from challenge_11 import encrypt_aes_ecb
-from challenge_12 import detect_block_size
-from challenge_12 import detect_ecb
-from set1.challenge_7 import decrypt_aes_ecb
+from cryptopals.set2.challenge_9 import pkcs7_pad
+from cryptopals.set2.challenge_11 import encrypt_aes_ecb
+from cryptopals.set2.challenge_12 import detect_block_size
+from cryptopals.set2.challenge_12 import detect_ecb
+from cryptopals.set1.challenge_7 import decrypt_aes_ecb
 
 _uid = 10
 _registered_emails = set()

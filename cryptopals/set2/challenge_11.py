@@ -1,8 +1,8 @@
 import random
 from Crypto.Cipher import AES
-from challenge_9 import pkcs7_pad
-from challenge_10 import encrypt_aes_cbc
-from set1.challenge_8 import detect_ecb
+from cryptopals.set2.challenge_9 import pkcs7_pad
+from cryptopals.set2.challenge_10 import encrypt_aes_cbc
+from cryptopals.set1.challenge_8 import detect_ecb
 
 def pseudorandom_aes_key():
     """Return a 16 byte block generated pseudorandomly."""
@@ -70,3 +70,4 @@ def main():
     algorithm, detected = ecb_cbc_encryption_oracle(ecb_or_cbc_encrypt)
 
     return algorithm == detected
+

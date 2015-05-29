@@ -1,4 +1,4 @@
-from challenge_10 import encrypt_aes_cbc, decrypt_aes_cbc
+from cryptopals.set2.challenge_10 import encrypt_aes_cbc, decrypt_aes_cbc
 import re
 import random
 
