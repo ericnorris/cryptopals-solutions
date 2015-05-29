@@ -1,6 +1,8 @@
 import unittest
-from os import path, chdir
-from set1 import *
+from os import path
+from cryptopals.set1 import (challenge_1, challenge_2, challenge_3,
+                             challenge_4, challenge_5, challenge_6,
+                             challenge_7, challenge_8)
 
 test_directory = path.dirname(path.realpath(__file__))
 
