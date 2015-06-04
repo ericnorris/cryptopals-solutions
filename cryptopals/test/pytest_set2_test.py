@@ -1,14 +1,14 @@
 
 
-from cryptopals.set2 import (challenge_9, challenge_10, challenge_11,
+from cryptopals.set2 import (challenge_09, challenge_10, challenge_11,
                              challenge_12, challenge_13, challenge_14,
                              challenge_15, challenge_16)
 
 import pytest
 
 
-def test_challenge_9(params, expected):
-    result = challenge_9.main(*params)
+def test_challenge_09(params, expected):
+    result = challenge_09.main(*params)
 
     assert result == expected
 
