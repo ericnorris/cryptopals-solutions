@@ -69,4 +69,4 @@ def main(ciphertext, key, IV):
     decrypted = decrypt_aes_cbc(ciphertext, key, IV)
     encrypted = encrypt_aes_cbc(decrypted, key, IV)
 
-    return (decrypted, encrypted)
+    return (decrypted, encrypted.encode('base64'))
