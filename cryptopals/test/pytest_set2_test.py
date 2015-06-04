@@ -51,7 +51,7 @@ def test_challenge_14(params):
     # TODO: encrypt here, then check?
     plaintext = params[0].decode('base64')
 
-    result = challenge_12.main(plaintext)
+    result = challenge_14.main(plaintext)
 
     assert result == plaintext
 
