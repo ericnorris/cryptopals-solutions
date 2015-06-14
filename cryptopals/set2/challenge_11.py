@@ -1,8 +1,8 @@
 import random
 from Crypto.Cipher import AES
-from cryptopals.set2.challenge_9 import pkcs7_pad
+from cryptopals.set2.challenge_09 import pkcs7_pad
 from cryptopals.set2.challenge_10 import encrypt_aes_cbc
-from cryptopals.set1.challenge_8 import detect_ecb
+from cryptopals.set1.challenge_08 import detect_ecb
 
 def pseudorandom_aes_key():
     """Return a 16 byte block generated pseudorandomly."""
