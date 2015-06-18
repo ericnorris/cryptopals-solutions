@@ -1,6 +1,6 @@
 from urlparse import parse_qsl
 from re import sub
-from cryptopals.set2.challenge_09 import pkcs7_pad
+from cryptopals.util.pkcs_7 import pkcs7_pad
 from cryptopals.set2.challenge_11 import encrypt_aes_ecb
 from cryptopals.set2.challenge_12 import detect_block_size
 from cryptopals.set2.challenge_12 import detect_ecb
