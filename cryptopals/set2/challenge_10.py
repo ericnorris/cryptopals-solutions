@@ -1,5 +1,5 @@
 from Crypto.Cipher import AES
-from cryptopals.set2.challenge_09 import pkcs7_pad
+from cryptopals.util.pkcs_7 import pkcs7_pad, pkcs7_strip
 
 # This challenge requires the use of the PyCrypto module
 # https://github.com/dlitz/pycrypto
@@ -59,10 +59,7 @@ def decrypt_aes_cbc(ciphertext, key, IV):
         previous_block = cipher_block
 
     # Strip the padding
-    padding_length = ord(plaintext[-1])
-    plaintext = plaintext[:-padding_length]
-
-    return plaintext
+    return pkcs7_strip(plaintext)
 
 def main(ciphertext, key, IV):
     """Decrypt the ciphertext, and then encrypt with the same key/IV."""
