@@ -1,14 +1,14 @@
-import base64
 from cryptopals.set1.common import recover_xor_key
 
-def main(data):
-    line_scores = {
-        score: text for _, score, text in [
-            recover_xor_key(base64.b16decode(line.rstrip(), True))
-            for line in data
+
+def test(hex_strings, expected):
+    english_score = {
+        score: text for key, score, text in [
+            recover_xor_key(hex_string.decode('hex'))
+            for hex_string in hex_strings
         ]
     }
 
-    best_score = min(line_scores)
+    best_score = min(english_score)
 
-    return line_scores[best_score]
+    return english_score[best_score]

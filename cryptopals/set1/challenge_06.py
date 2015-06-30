@@ -45,7 +45,7 @@ def transpose(iterable):
 def repeating_xor_decrypt(text, key):
     return ''.join([chr(ord(a) ^ ord(k)) for a, k in zip(text, cycle(key))])
 
-def main(ciphertext):
+def break_repeating_key_xor(ciphertext):
     # Calculate the edit distance for keysizes ranging from 2 to 40
     keysize_scores = block_hamming_distance(ciphertext, 2, 40)
 
@@ -71,3 +71,9 @@ def main(ciphertext):
             best_key = key
 
     return key
+
+
+def test(ciphertext, expected_key):
+    key = break_repeating_key_xor(ciphertext)
+
+    assert key == expected_key

@@ -10,8 +10,10 @@ def detect_ecb(ciphertext):
     # ECB will likely have repeating blocks
     return len(blocks) != len(set(blocks))
 
-def main(data_file):
-    return sum([
-        detect_ecb(line.rstrip().decode('hex'))
-        for line in data_file
-    ])
+
+def test(ciphertexts, ecb_ciphertext):
+    for ciphertext in ciphertexts:
+        if detect_ecb(ciphertext):
+            break
+
+    assert ciphertext == ecb_ciphertext

@@ -18,5 +18,6 @@ def decrypt_aes_ecb(ciphertext, key):
 
     return plaintext
 
-def main(ciphertext, key):
+
+def test(ciphertext, key, expected_plaintext):
     return decrypt_aes_ecb(ciphertext, key)
