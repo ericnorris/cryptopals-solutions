@@ -56,5 +56,6 @@ def cbc_bitflip():
 
     return ''.join(ciphertext)
 
-def main():
-    return admin_check(cbc_bitflip())
+
+def test():
+    assert admin_check(cbc_bitflip())

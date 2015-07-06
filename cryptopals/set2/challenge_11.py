@@ -66,8 +66,10 @@ def ecb_cbc_encryption_oracle(encryption_function):
 
     return (algorithm, detected_algorithm)
 
-def main():
+
+def test():
+    # TODO: Specify algorithm in test function and check that the detector
+    # guesses correctly.
     algorithm, detected = ecb_cbc_encryption_oracle(ecb_or_cbc_encrypt)
 
-    return algorithm == detected
-
+    assert algorithm == detected

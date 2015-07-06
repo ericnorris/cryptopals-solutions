@@ -81,7 +81,10 @@ def assume_admin_role(profile_function):
 
     return admin_profile
 
-def main():
-    admin_profile = assume_admin_role(profile_for)
 
-    return decrypt_profile(admin_profile)
+def test():
+    admin_profile_cookie = assume_admin_role(profile_for)
+    admin_profile = decrypt_profile(admin_profile_cookie)
+
+    assert 'role' in admin_profile
+    assert 'admin' == admin_profile['role']

@@ -177,7 +177,9 @@ def decrypt_ecb_suffix(encryption_function):
 
     return solution
 
-def main(secret_plaintext):
-    encryption_function = aes_ecb_unknown_key_random_prefix_encrypt(secret_plaintext)
 
-    return decrypt_ecb_suffix(encryption_function)
+def test(secret_plaintext):
+    encryption_function = aes_ecb_unknown_key_random_prefix_encrypt(
+        secret_plaintext)
+
+    assert decrypt_ecb_suffix(encryption_function) == secret_plaintext

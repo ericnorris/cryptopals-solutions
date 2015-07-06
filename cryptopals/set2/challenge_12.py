@@ -104,7 +104,8 @@ def decrypt_ecb_suffix(encryption_function):
 
     return solution
 
-def main(secret_plaintext):
+
+def test(secret_plaintext):
     encryption_oracle = aes_ecb_unknown_key_encrypt(secret_plaintext)
 
     return decrypt_ecb_suffix(encryption_oracle)

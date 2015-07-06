@@ -61,9 +61,12 @@ def decrypt_aes_cbc(ciphertext, key, IV):
     # Strip the padding
     return pkcs7_strip(plaintext)
 
-def main(ciphertext, key, IV):
-    """Decrypt the ciphertext, and then encrypt with the same key/IV."""
-    decrypted = decrypt_aes_cbc(ciphertext, key, IV)
-    encrypted = encrypt_aes_cbc(decrypted, key, IV)
 
-    return (decrypted, encrypted.encode('base64'))
+def test(ciphertext, key, iv, expected_plaintext):
+    """Decrypt the ciphertext, and then encrypt with the same key/IV."""
+
+    decrypted = decrypt_aes_cbc(ciphertext, key, iv)
+    encrypted = encrypt_aes_cbc(decrypted, key, iv)
+
+    assert decrypted == expected_plaintext
+    assert encrypted == ciphertext
