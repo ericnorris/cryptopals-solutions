@@ -1,3 +1,4 @@
+import random
 from cryptopals.util.pkcs_7 import pkcs7_strip, PKCS7PaddingError
 from cryptopals.set2.challenge_10 import encrypt_aes_cbc, decrypt_aes_cbc
 from cryptopals.set2.challenge_11 import pseudorandom_aes_key
@@ -79,7 +80,8 @@ def padding_oracle_attack(ciphertext, iv):
     return pkcs7_strip(solution)
 
 
-def main(plaintext):
+def test(strings):
+    plaintext = random.choice(strings)
     ciphertext, iv = encrypt_token(plaintext)
 
-    return padding_oracle_attack(ciphertext, iv)
+    assert padding_oracle_attack(ciphertext, iv) == plaintext
